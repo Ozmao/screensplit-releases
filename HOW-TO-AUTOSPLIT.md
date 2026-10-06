@@ -77,6 +77,14 @@ moves the file for you. The library location can be changed in *Settings*.
 **Coming from LiveSplit?** Right-click → **Import from LiveSplit (.lss)…** brings over your segments,
 PB, best segments, attempt count and attempt history, straight into the library.
 
+**Going the other way** (LiveSplit, or uploading to splits.io): right-click → **Export to LiveSplit
+(.lss)…** writes the same things back out, including every attempt's segment times.
+
+**Someone already made an autosplitter for your game?** Double-click their `.screensplit` file (or
+drop it on the timer, or right-click → Autosplitter → **Import autosplitter…**). Its checks,
+reference images and segment names go straight into your library and it's ready to run. If you
+already have splits for that category, your times are kept and only the autosplitter is replaced.
+
 ## 2. Create the autosplit profile
 
 1. Right-click → **Autosplitter → New profile…**. The profile folder is created automatically next to
@@ -268,6 +276,22 @@ something split wrong.
 3. If a split ever fires early during a real run, press **Undo** and keep going, then fix that
    condition afterwards (right-click → **Edit profile…**).
 
+**What you compare against.** Right-click → **Compare against**: your **Personal best**, **Best
+segments** (your golds back to back), **Average segments** (each segment's average over your last 20
+clean runs of it) or your **Latest run**. The split times, deltas and timer colour follow it; a new PB
+is still a new PB. You can also give **Switch comparison** a key or controller button in *Settings →
+Hotkeys*.
+
+**What's under the timer.** *Settings → Layout* picks up to six info tiles (previous segment, PB, sum
+of best, best possible time, current pace, possible time save, current segment, finished runs), how
+many splits the list shows (a fixed number makes the window fit them exactly, like a LiveSplit
+layout) and whether the final split always stays visible at the bottom.
+
+**If ScreenSplit or the PC crashes mid-run**, the run isn't lost: it's saved every few seconds and
+after every split. On the next start you can continue it (still counting, including the time it
+was closed, or paused at the moment it closed), end it there and keep its golds, or discard it.
+Unsaved changes to your splits (a new PB, golds) are kept the same way.
+
 **How precise is it?** Every start, split and load change is stamped with the moment the deciding
 frame was captured, not when ScreenSplit finished processing it. With Graphics Capture, splits
 measured within ±10 ms of the screen change, roughly one frame at 60 fps.
@@ -297,6 +321,9 @@ measured within ±10 ms of the screen change, roughly one frame at 60 fps.
 
 ## 11. Share it
 
-The profile folder (`profile.json` + `images\`) is all someone else needs. Zip it, and they open it
-with **Autosplitter → Open profile…** and select the `profile.json`. The same profile works in the
-Linux version. Text conditions may need small tweaks there because Linux uses a different OCR engine.
+Right-click → Autosplitter → **Share autosplitter (one file)…** saves a `.screensplit` file with your
+checks, the reference images they use, your segment names and the game's icon. None of your times
+are included. Send it to other runners: they double-click it (or drop it on ScreenSplit) and it's
+installed in their library, ready to run. If their game window has a different name, they pick it
+once in **Edit profile**. The same profile works in the Linux version. Text conditions may need
+small tweaks there because Linux uses a different OCR engine.

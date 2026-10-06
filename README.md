@@ -17,7 +17,10 @@ A speedrun timer with an autosplitter that **watches the screen**. There are no 
 - **Screen-based autosplitting:** match an image, read text (OCR) or detect a loading screen. Splits are timed from the frame where the change appeared.
 - **Easy setup:** freeze the last 10 seconds and scrub back to grab the exact frame, get a suggested threshold, and use a test run that logs every split and why.
 - **A full timer:** PB, golds, sum of best, attempt history, Real Time and Game Time (or both at once).
-- **Imports from LiveSplit:** bring your `.lss` splits over.
+- **Shareable autosplitters:** one `.screensplit` file holds a game's whole autosplitter. Double-click it and it's ready to run.
+- **Compare against** PB, best segments, average segments or your latest run, with info tiles under the timer (best possible time, current pace, possible time save and more).
+- **Crash recovery:** if the PC or the timer crashes mid-run, continue the run on the next start.
+- **Works with LiveSplit:** import your `.lss` splits, or export back to `.lss`.
 - **Hotkeys on keyboard or controller:** Xbox, PlayStation, Switch Pro and most others work while the game has focus.
 - **Stream-ready:** the oz-ui themes, plus a chroma-key mode for OBS.
 
