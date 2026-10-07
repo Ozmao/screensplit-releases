@@ -5,9 +5,9 @@
 A speedrun timer with an autosplitter that **watches the screen**. There are no game hooks, memory reading or scripts. You show it what to look for (a "Level clear" banner, a loading screen, a line of text) and it splits, starts, resets and removes loads by itself, in any game.
 
 <p align="center">
-  <img src="images/timer.png" width="250" alt="The ScreenSplit timer mid-run: splits with deltas, game time, info tiles including the world record, and a green status pill showing the autosplitter sees the game">
+  <img src="images/timer.png" width="220" alt="The ScreenSplit timer mid-run: splits with deltas, game time, info tiles including the world record, and a green status pill showing the autosplitter sees the game">
   &nbsp;
-  <img src="images/editor-test.png" width="560" alt="The autosplit profile editor: a live preview of the game with the regions it watches, and a test run log of the start, splits and load removal">
+  <img src="images/editor-test.png" width="520" alt="The autosplit profile editor: a live preview of the game with the regions it watches, and a test run log of the start, splits and load removal">
 </p>
 
 ## Download
@@ -46,15 +46,15 @@ A speedrun timer with an autosplitter that **watches the screen**. There are no 
 **Your OBS overlay.** Lay it out in ScreenSplit and add it to OBS as a browser source.
 
 <p align="center">
-  <img src="images/overlay-editor.png" width="430" alt="The OBS overlay layout window with the elements placed on a 1920 by 1080 canvas">
-  <img src="images/overlay.png" width="430" alt="The overlay on top of a game, as OBS shows it">
+  <img src="images/overlay-editor.png" width="380" alt="The OBS overlay layout window with the elements placed on a 1920 by 1080 canvas">
+  <img src="images/overlay.png" width="380" alt="The overlay on top of a game, as OBS shows it">
 </p>
 
 **Analysis.** Every segment's PB, gold, average and consistency, and charts of your runs.
 
 <p align="center">
-  <img src="images/analysis.png" width="430" alt="Analysis of each segment with a chart of every time one segment was run">
-  <img src="images/analysis-runs.png" width="430" alt="Finished runs and the PB over time, and one run broken down segment by segment">
+  <img src="images/analysis.png" width="380" alt="Analysis of each segment with a chart of every time one segment was run">
+  <img src="images/analysis-runs.png" width="380" alt="Finished runs and the PB over time, and one run broken down segment by segment">
 </p>
 
 <sub>The game in the autosplit screenshots is a made-up demo, Block Quest. The run is a sample Celeste Any% file, with the world record live from speedrun.com.</sub>

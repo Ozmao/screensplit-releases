@@ -343,8 +343,8 @@ you ran it; the **Runs** tab charts your finished runs with your PB over time an
 run segment by segment.
 
 <p align="center">
-<img src="images/analysis.png" width="430" alt="Analysis, Segments tab: PB, gold, average, median, consistency and resets for each segment, and a chart of every Mirror Temple time">
-<img src="images/analysis-runs.png" width="430" alt="Analysis, Runs tab: finished runs and the PB over time, and one run broken down segment by segment with its golds">
+<img src="images/analysis.png" width="380" alt="Analysis, Segments tab: PB, gold, average, median, consistency and resets for each segment, and a chart of every Mirror Temple time">
+<img src="images/analysis-runs.png" width="380" alt="Analysis, Runs tab: finished runs and the PB over time, and one run broken down segment by segment with its golds">
 </p>
 
 **If ScreenSplit or the PC crashes mid-run**, the run isn't lost: it's saved every few seconds and
