@@ -62,13 +62,13 @@ Documents\ScreenSplit\
   Celeste\
     Any%.splits.json          your splits, PB, golds, history
     Any% autosplitter\        your autosplit profile (made in step 2)
-    icon.png                  the game's icon, shown in the timer's header
+    icon.png                  optional: an icon for the header until the game has run
 ```
 
-The **game's icon** is picked up automatically the first time the game is running while its
-autosplitter is loaded (until then the header shows its initials). It's taken from the game's exe and
-kept as `icon.png`, so it stays when the game is closed. Put your own `icon.png` there to use different
-art; ScreenSplit never overwrites one.
+The **game's icon** in the timer's header comes from the game itself: while its autosplitter is loaded,
+ScreenSplit shows the icon of the game process it found, and switches if that process changes. When
+the game is closed it keeps showing the last one it saw. Until the game has run once, the header shows
+an `icon.png` from the game's folder (shared autosplitters bring one), or else the game's initials.
 
 Switch between games and categories from the **GAMES** list at the top of the right-click menu.
 ScreenSplit reopens the last one on the next launch. Renaming the game or category in *Edit splits*
