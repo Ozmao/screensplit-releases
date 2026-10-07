@@ -55,6 +55,10 @@ Everything else is in the **right-click menu** on the timer.
 2. **Game:** pick it from the dropdown, or choose **＋ Add new game…** and type its name.
    **Category:** e.g. `Any%`. Add one row per segment (**Add**, **Insert above**, **Move up/down**).
    Leave the time columns empty; they fill in as you run.
+
+   <p align="center"><img src="images/splits-editor.png" width="560" alt="The Edit splits window: game, category, segments with PB and best-segment times, and the speedrun.com link with rules"><br>
+   <sub>Edit splits. The times fill in by themselves as you run; the speedrun.com box is covered in §9.</sub></p>
+
 3. Click **Save**. That's it: ScreenSplit files everything into your **game library** for you:
 
 ```
@@ -146,10 +150,18 @@ One condition can serve several triggers. In this example the title logo does bo
      works while you're in the game and doesn't take focus. The preview freezes; alt-tab to the
      editor, drag the slider under the preview back to the exact frame (up to ~10 s), and capture
      from there. **F8** again (or *Back to live*) resumes.
+
+     <p align="center"><img src="images/editor-freeze.png" width="760" alt="The preview frozen with F8 and scrubbed 3.2 seconds back to the frame where the LEVEL COMPLETE banner was on screen"><br>
+     <sub>Frozen with F8 and dragged back 3.2 s to the frame with the banner.</sub></p>
 5. **Set the threshold.** Let the thing appear and disappear once or twice. The purple box under
    the live score watches the scores and says e.g. *Not matching ≤ 0.70, matching ≥ 0.99 → suggested
    0.845*. Click **Use**. If it says there's no clear split, the region is too loose or something in
    it moves; tighten it or erase the moving parts (next step). The dot turns green when it matches.
+
+   <p align="center"><img src="images/editor-image.png" width="760" alt="The profile editor: live preview of the game on the left with the Title logo region outlined in green, and on the right the captured reference, threshold, live score 1.000 and the suggested threshold with a Use button"><br>
+   <sub>An image condition on the title logo: the green box is matching (live score 1.000), and the purple box suggests a threshold.
+   The game in these screenshots is a made-up demo, Block Quest.</sub></p>
+
 6. Optional, but strong for anything that changes: the reference is saved as
    `<profile>\images\<id>.png`. Open it in Paint.NET, GIMP or Photoshop and **erase** the parts that
    change, such as numbers, animated sparkles or a moving background. Transparent pixels are
@@ -170,6 +182,9 @@ One condition can serve several triggers. In this example the title logo does bo
    adds a margin and tries a black/white, a grey and a colour version on every read. **What the
    OCR sees** shows the black/white version, and the text under it is what was read.
 4. The dot turns green when the recognised text matches.
+
+   <p align="center"><img src="images/editor-text.png" width="760" alt="A text condition around the LEVEL COMPLETE banner; What the OCR sees shows the cleaned-up black and white text and the reading LEVEL COMPLETE"><br>
+   <sub>A text condition on the banner. <i>What the OCR sees</i> shows the cleaned-up image and what was read.</sub></p>
 
 If it still reads nothing, turn **Auto clean-up** off and tune by hand: **Invert colors** for light
 text on dark, **Upscale ×3–4** for small text, **Black/white at** for busy backgrounds (move the
@@ -199,6 +214,9 @@ Under **2. Triggers**:
 | **appears / disappears** | Fire when the condition becomes true, or becomes false |
 | **hold (ms)** | It must stay that way this long first. Filters out flickers and one-frame flashes |
 | **delay (ms)** | Wait this long after it fires, then act. Use it to line up with your game's official timing rules |
+
+<p align="center"><img src="images/editor-triggers.png" width="420" alt="The Triggers section: start when Title logo disappears, split when Level complete appears, no reset check, and the per-segment split checks for five segments"><br>
+<sub>Start when the title logo disappears, split every segment when "Level complete" appears.</sub></p>
 
 Rules to know:
 
@@ -254,6 +272,9 @@ trigger and keep playing. The log also shows every change the autosplitter sees 
 is watching (`·  "time SE" appeared · reads "Time Elapsed 12:03"`) and every split a fail-safe
 ignored (`⛔ ignored split ← "time SE": same check split 1.2 s ago`).
 
+<p align="center"><img src="images/editor-test.png" width="760" alt="A test run in progress: segment 3 of 5, waiting for Level complete to appear, with a log of the start, two splits and the load-removal pauses"><br>
+<sub>A test run two levels in: it started when the logo went away, split on each banner and paused for the loading screens.</sub></p>
+
 **During real runs**, right-click the timer → **Autosplitter → Event log…** for the same read-out.
 It can stay open next to the timer, and **Save…** writes it to a text file you can share when
 something split wrong.
@@ -276,6 +297,9 @@ something split wrong.
 3. If a split ever fires early during a real run, press **Undo** and keep going, then fix that
    condition afterwards (right-click → **Edit profile…**).
 
+<p align="center"><img src="images/timer.png" width="300" alt="The timer mid-run: splits with deltas, a gold in yellow, the game time in green because the run is ahead, six info tiles including the world record, and a green status pill reading Celeste · 60 fps"><br>
+<sub>Mid-run and ahead of the PB. The green pill at the bottom means the autosplitter sees the game.</sub></p>
+
 **What you compare against.** Right-click → **Compare against**: your **Personal best**, **Best
 segments** (your golds back to back), **Average segments** (each segment's average over your last 20
 clean runs of it), your **Latest run** or the **World record** (below). The split times, deltas and
@@ -288,6 +312,8 @@ record), how
 many splits the list shows (a fixed number makes the window fit them exactly, like a LiveSplit
 layout) and whether the final split always stays visible at the bottom. It can also show the category's
 rules in a small panel under the timer.
+
+<p align="center"><img src="images/settings-layout.png" width="480" alt="Settings, Layout section: switches for the info tiles, how many splits are shown, the final split at the bottom, the rules panel and the run summary"></p>
 
 **World record and rules from speedrun.com.** Right-click → **Link category…** (or the
 **speedrun.com and rules** box in *Edit splits*): search the game, pick the category and its
@@ -302,15 +328,24 @@ subcategories (e.g. *All Dungeons → Solo, ShB*). ScreenSplit then:
 
 ScreenSplit only reads from speedrun.com; it never needs an account.
 
+<p align="center"><img src="images/speedrun-link.png" width="400" alt="The Link to speedrun.com dialog with Celeste found in the search and the Any% category picked"></p>
+
 **After each run** a short summary appears under the timer: reset in which segment (or the final
 time), how far ahead or behind you were, your golds, and the segments where you gained and lost
 the most. Click it to open that run in the **Analysis** (turn it off in *Settings → Layout*).
+
+<p align="center"><img src="images/run-summary.png" width="300" alt="Run summary under the timer: Reset in Mirror Temple, +0.3 vs PB, a gold in Forsaken City, best and worst segments"></p>
 
 **Analysis** (right-click → **Analysis…**) looks at your whole history: attempts, finished runs,
 playtime, and for every segment its PB, gold, average, median, consistency (±), how much your PB
 loses to the gold and how often runs are reset there. Pick a segment to see a chart of every time
 you ran it; the **Runs** tab charts your finished runs with your PB over time and breaks down any
 run segment by segment.
+
+<p align="center">
+<img src="images/analysis.png" width="430" alt="Analysis, Segments tab: PB, gold, average, median, consistency and resets for each segment, and a chart of every Mirror Temple time">
+<img src="images/analysis-runs.png" width="430" alt="Analysis, Runs tab: finished runs and the PB over time, and one run broken down segment by segment with its golds">
+</p>
 
 **If ScreenSplit or the PC crashes mid-run**, the run isn't lost: it's saved every few seconds and
 after every split. On the next start you can continue it (still counting, including the time it
@@ -332,6 +367,12 @@ measured within ±10 ms of the screen change, roughly one frame at 60 fps.
   will show. Changes show up in OBS at once. (**Edit in web browser…** opens the same editor in your
   browser.)
   The port can be changed (or the overlay turned off) in **Settings → OBS overlay**.
+
+  <p align="center"><img src="images/overlay-editor.png" width="760" alt="The OBS overlay layout window: the element list and the selected element's position and size on the left, and the 1920 by 1080 canvas with the title, splits, timer, info tiles, world record and comparison placed on the right"><br>
+  <sub>The layout window. The canvas is the browser source; drag the elements around it.</sub></p>
+
+  <p align="center"><img src="images/overlay.png" width="760" alt="The overlay as OBS shows it, on top of the game"><br>
+  <sub>The same layout in OBS, over the game.</sub></p>
 - **Show both Real and Game time** adds a second big timer for the other timing method, so viewers
   see RTA and load-removed time together.
 - **Chroma key (for OBS)** turns the background into one flat colour. In **Settings → Display** pick

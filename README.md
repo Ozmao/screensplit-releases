@@ -4,6 +4,12 @@
 
 A speedrun timer with an autosplitter that **watches the screen**. There are no game hooks, memory reading or scripts. You show it what to look for (a "Level clear" banner, a loading screen, a line of text) and it splits, starts, resets and removes loads by itself, in any game.
 
+<p align="center">
+  <img src="images/timer.png" width="250" alt="The ScreenSplit timer mid-run: splits with deltas, game time, info tiles including the world record, and a green status pill showing the autosplitter sees the game">
+  &nbsp;
+  <img src="images/editor-test.png" width="560" alt="The autosplit profile editor: a live preview of the game with the regions it watches, and a test run log of the start, splits and load removal">
+</p>
+
 ## Download
 
 **[⬇ Latest release](https://github.com/Ozmao/screensplit-releases/releases/latest)**: download `ScreenSplit.exe`.
@@ -27,9 +33,35 @@ A speedrun timer with an autosplitter that **watches the screen**. There are no 
 - **Hotkeys on keyboard or controller:** Xbox, PlayStation, Switch Pro and most others work while the game has focus.
 - **Stream-ready:** the oz-ui themes, plus a chroma-key mode for OBS.
 
+## A closer look
+
+**Setting up an autosplit.** Drag a box over what to look for and capture it. The live score and a suggested threshold show whether it will work.
+
+<p align="center"><img src="images/editor-image.png" width="760" alt="An image condition on a game's title logo: the region outlined on the live preview, its captured reference, threshold, live score 1.000 and the suggested threshold"></p>
+
+**Reading text.** Text conditions use the OCR built into Windows, and show you what it reads.
+
+<p align="center"><img src="images/editor-text.png" width="760" alt="A text condition on a LEVEL COMPLETE banner, with the cleaned-up image the OCR sees and its reading"></p>
+
+**Your OBS overlay.** Lay it out in ScreenSplit and add it to OBS as a browser source.
+
+<p align="center">
+  <img src="images/overlay-editor.png" width="430" alt="The OBS overlay layout window with the elements placed on a 1920 by 1080 canvas">
+  <img src="images/overlay.png" width="430" alt="The overlay on top of a game, as OBS shows it">
+</p>
+
+**Analysis.** Every segment's PB, gold, average and consistency, and charts of your runs.
+
+<p align="center">
+  <img src="images/analysis.png" width="430" alt="Analysis of each segment with a chart of every time one segment was run">
+  <img src="images/analysis-runs.png" width="430" alt="Finished runs and the PB over time, and one run broken down segment by segment">
+</p>
+
+<sub>The game in the autosplit screenshots is a made-up demo, Block Quest. The run is a sample Celeste Any% file, with the world record live from speedrun.com.</sub>
+
 ## Getting started
 
-Read **[HOW-TO-AUTOSPLIT.md](HOW-TO-AUTOSPLIT.md)** to set a game up from scratch. It's also attached to every release.
+Read **[HOW-TO-AUTOSPLIT.md](HOW-TO-AUTOSPLIT.md)** to set a game up from scratch, with a screenshot for each step. A copy is attached to every release too; read it here to see the pictures.
 
 ## Feedback
 
