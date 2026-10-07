@@ -359,7 +359,7 @@ measured within ±10 ms of the screen change, roughly one frame at 60 fps.
 **Showing it on stream.** Right-click the timer:
 - **OBS overlay (browser source).** ScreenSplit serves an overlay at `http://localhost:16900/`
   (only this PC can reach it). In OBS: **Sources → + → Browser**, paste that URL and set the size to
-  your canvas (1920 × 1080 unless you change it). Right-click the timer → **OBS overlay → Edit layout**
+  your canvas (1920 × 1080 unless you change it). Right-click the timer → **OBS overlay → Edit layout…** (or click **Edit layout…** in *Settings → OBS overlay*)
   opens the layout editor in its own window, a live preview of the browser source: drag the title, splits, timer, info tiles, world record,
   comparison and rules wherever you want them, resize them by their corner, pick which info tiles
   show, and turn the panels off for text straight over the game. Right-click an element to hide it,
