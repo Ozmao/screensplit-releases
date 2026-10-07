@@ -20,6 +20,9 @@ A speedrun timer with an autosplitter that **watches the screen**. There are no 
 - **Shareable autosplitters:** one `.screensplit` file holds a game's whole autosplitter. Double-click it and it's ready to run.
 - **Compare against** PB, best segments, average segments or your latest run, with info tiles under the timer (best possible time, current pace, possible time save and more).
 - **Crash recovery:** if the PC or the timer crashes mid-run, continue the run on the next start.
+- **Analysis:** averages, consistency and resets for every segment, charts of your runs, and a summary after each run.
+- **OBS overlay you lay out yourself:** a browser source; drag the elements into place in your web browser.
+- **speedrun.com:** compare against the world record and see the category's rules next to the game.
 - **Works with LiveSplit:** import your `.lss` splits, or export back to `.lss`.
 - **Hotkeys on keyboard or controller:** Xbox, PlayStation, Switch Pro and most others work while the game has focus.
 - **Stream-ready:** the oz-ui themes, plus a chroma-key mode for OBS.

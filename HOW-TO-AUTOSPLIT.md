@@ -278,14 +278,39 @@ something split wrong.
 
 **What you compare against.** Right-click → **Compare against**: your **Personal best**, **Best
 segments** (your golds back to back), **Average segments** (each segment's average over your last 20
-clean runs of it) or your **Latest run**. The split times, deltas and timer colour follow it; a new PB
-is still a new PB. You can also give **Switch comparison** a key or controller button in *Settings →
+clean runs of it), your **Latest run** or the **World record** (below). The split times, deltas and
+timer colour follow it; a new PB is still a new PB. You can also give **Switch comparison** a key or controller button in *Settings →
 Hotkeys*.
 
 **What's under the timer.** *Settings → Layout* picks up to six info tiles (previous segment, PB, sum
-of best, best possible time, current pace, possible time save, current segment, finished runs), how
+of best, best possible time, current pace, possible time save, current segment, finished runs, world
+record), how
 many splits the list shows (a fixed number makes the window fit them exactly, like a LiveSplit
-layout) and whether the final split always stays visible at the bottom.
+layout) and whether the final split always stays visible at the bottom. It can also show the category's
+rules in a small panel under the timer.
+
+**World record and rules from speedrun.com.** Right-click → **Link category…** (or the
+**speedrun.com and rules** box in *Edit splits*): search the game, pick the category and its
+subcategories (e.g. *All Dungeons → Solo, ShB*). ScreenSplit then:
+- fetches the **world record** (time and runner) and keeps it up to date, also offline from its cache.
+  Compare against **World record** to see your pace against it: speedrun.com doesn't publish split
+  times, so the record's time is spread over your segments the way your golds are (the final split
+  is the record exactly). Add the **World record** info tile to see it under the timer.
+- fills in the category's **rules**, which you can edit. Right-click → **Rules…** opens them in a
+  window you can keep next to the game, *Settings → Layout* can show them under the timer, and the
+  OBS overlay has a Rules box that scrolls through them.
+
+ScreenSplit only reads from speedrun.com; it never needs an account.
+
+**After each run** a short summary appears under the timer: reset in which segment (or the final
+time), how far ahead or behind you were, your golds, and the segments where you gained and lost
+the most. Click it to open that run in the **Analysis** (turn it off in *Settings → Layout*).
+
+**Analysis** (right-click → **Analysis…**) looks at your whole history: attempts, finished runs,
+playtime, and for every segment its PB, gold, average, median, consistency (±), how much your PB
+loses to the gold and how often runs are reset there. Pick a segment to see a chart of every time
+you ran it; the **Runs** tab charts your finished runs with your PB over time and breaks down any
+run segment by segment.
 
 **If ScreenSplit or the PC crashes mid-run**, the run isn't lost: it's saved every few seconds and
 after every split. On the next start you can continue it (still counting, including the time it
@@ -297,6 +322,13 @@ frame was captured, not when ScreenSplit finished processing it. With Graphics C
 measured within ±10 ms of the screen change, roughly one frame at 60 fps.
 
 **Showing it on stream.** Right-click the timer:
+- **OBS overlay (browser source).** ScreenSplit serves an overlay at `http://localhost:16900/`
+  (only this PC can reach it). In OBS: **Sources → + → Browser**, paste that URL and set the size to
+  your canvas (1920 × 1080 unless you change it). Right-click the timer → **OBS overlay → Edit layout**
+  opens the layout in your web browser: drag the title, splits, timer, info tiles, world record,
+  comparison and rules wherever you want them, resize them by their corner, pick which info tiles
+  show, and turn the panels off for text straight over the game. Changes show up in OBS at once.
+  The port can be changed (or the overlay turned off) in **Settings → OBS overlay**.
 - **Show both Real and Game time** adds a second big timer for the other timing method, so viewers
   see RTA and load-removed time together.
 - **Chroma key (for OBS)** turns the background into one flat colour. In **Settings → Display** pick
