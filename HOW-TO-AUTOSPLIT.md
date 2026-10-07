@@ -325,9 +325,12 @@ measured within ±10 ms of the screen change, roughly one frame at 60 fps.
 - **OBS overlay (browser source).** ScreenSplit serves an overlay at `http://localhost:16900/`
   (only this PC can reach it). In OBS: **Sources → + → Browser**, paste that URL and set the size to
   your canvas (1920 × 1080 unless you change it). Right-click the timer → **OBS overlay → Edit layout**
-  opens the layout in your web browser: drag the title, splits, timer, info tiles, world record,
+  opens the layout editor in its own window, a live preview of the browser source: drag the title, splits, timer, info tiles, world record,
   comparison and rules wherever you want them, resize them by their corner, pick which info tiles
-  show, and turn the panels off for text straight over the game. Changes show up in OBS at once.
+  show, and turn the panels off for text straight over the game. Right-click an element to hide it,
+  change its text size, toggle its panel or bring it to the front; **Preview** shows only what OBS
+  will show. Changes show up in OBS at once. (**Edit in web browser…** opens the same editor in your
+  browser.)
   The port can be changed (or the overlay turned off) in **Settings → OBS overlay**.
 - **Show both Real and Game time** adds a second big timer for the other timing method, so viewers
   see RTA and load-removed time together.
