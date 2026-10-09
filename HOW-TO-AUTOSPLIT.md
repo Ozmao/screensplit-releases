@@ -248,14 +248,17 @@ Every split a fail-safe ignores shows up in the event read-out with the reason.
 
 ## 7. Load removal (optional)
 
-1. Make a condition for "loading": a **black screen** image (capture the full or near-full window
-   while it's black, threshold ~0.97), or the game's **Loading** text.
-2. Pick it under **3. Load removal**.
+1. Make a condition for each kind of load screen: a **black screen** image (capture the full or
+   near-full window while it's black, threshold ~0.97), the game's **Loading** text, a door or
+   elevator transition, and so on.
+2. Under **3. Load removal**, click **+ Add a load screen** for each one and pick its condition.
+   Click **✕** to remove one.
 3. On the timer, right-click → **Compare against → Game Time** if your category uses load-removed
    time.
 
-Game time pauses for exactly as long as the condition is true. The timer shows the other time in a
-pill under the method label, plus a **LOADING** pill while it's paused.
+Game time pauses for exactly as long as any of these conditions is true. When one load screen
+fades into another (black, then "Loading"), that counts as one pause, not two. The timer shows the
+other time in a pill under the method label, plus a **LOADING** pill while it's paused.
 
 ## 8. Test it without doing a real run
 

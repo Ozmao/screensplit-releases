@@ -20,7 +20,7 @@ A speedrun timer with an autosplitter that **watches the screen**. There are no 
 
 ## What it does
 
-- **Screen-based autosplitting:** match an image, read text (OCR) or detect a loading screen. Splits are timed from the frame where the change appeared.
+- **Screen-based autosplitting:** match an image, read text (OCR) or detect loading screens (as many kinds as the game has). Splits are timed from the frame where the change appeared.
 - **Easy setup:** freeze the last 10 seconds and scrub back to grab the exact frame, get a suggested threshold, and use a test run that logs every split and why.
 - **A full timer:** PB, golds, sum of best, attempt history, Real Time and Game Time (or both at once).
 - **Shareable autosplitters:** one `.screensplit` file holds a game's whole autosplitter. Double-click it and it's ready to run.
