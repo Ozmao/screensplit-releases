@@ -99,13 +99,19 @@ already have splits for that category, your times are kept and only the autospli
 ## 3. Point it at the game
 
 1. Start the game.
-2. In the editor, pick it from **Game window** (click **↻** if it isn't in the list).
+2. In the editor, pick it from **Capture** (click **↻** if it isn't in the list).
    The live preview appears on the left.
 3. **Process** and **Title contains** fill in automatically. These are how the timer finds the game
    later:
    - **Process** is the exe name without `.exe`. It's the most reliable, so keep it.
    - **Title contains**: if the title changes (version numbers, FPS counters), shorten it to the
      part that never changes, or clear it and rely on Process.
+
+**Game not in the list, or its preview stays black?** Some anti-cheats hide the game's window or
+block capturing it. Pick a **Whole screen** from the top of the **Capture** list instead, and play
+the game fullscreen or borderless on that screen. Regions are then parts of the whole screen, so
+keep the game's resolution and window position the same. Process and Title contains are optional
+then; they're only used to show the game's icon.
 
 ## 4. Plan before you click
 
@@ -142,8 +148,8 @@ One condition can serve several triggers. In this example the title logo does bo
 1. Click **+ Image**.
 2. **Name** it something readable, like *Title logo*. The **Id** is the internal name; letters,
    digits, `-` and `_` only.
-3. **Drag a rectangle** over the preview around the thing to detect. **Keep it tight.** Large regions
-   that are mostly dark background score high even when the thing isn't there.
+3. **Drag a rectangle** over the preview around the thing to detect. **Keep it tight.** A region
+   that is mostly plain background tells you less about the thing you want.
 4. Get the game to show the thing, then click **📷 Capture reference**. **Live score** should now
    read about **1.000**.
    - **Thing only shows for a moment?** Play normally, and right after it appears press **F8**. This
@@ -154,9 +160,16 @@ One condition can serve several triggers. In this example the title logo does bo
      <p align="center"><img src="images/editor-freeze.png" width="760" alt="The preview frozen with F8 and scrubbed 3.2 seconds back to the frame where the LEVEL COMPLETE banner was on screen"><br>
      <sub>Frozen with F8 and dragged back 3.2 s to the frame with the banner.</sub></p>
 5. **Set the threshold.** Let the thing appear and disappear once or twice. The purple box under
-   the live score watches the scores and says e.g. *Not matching ≤ 0.70, matching ≥ 0.99 → suggested
-   0.845*. Click **Use**. If it says there's no clear split, the region is too loose or something in
+   the live score watches the scores and says e.g. *Not matching ≤ 0.000, matching ≥ 0.990 → suggested
+   0.890*. Click **Use**. If it says there's no clear split, the region is too loose or something in
    it moves; tighten it or erase the moving parts (next step). The dot turns green when it matches.
+
+   The score is the lower of two checks, shown under the live score as e.g. *colour 0.991 · shape
+   0.420*. **Colour** is how close the colours are. **Shape** is whether the light/dark pattern lines
+   up. Shape is what stops look-alikes: a dark scene or a fade to black can match a black load
+   screen on colour alone, and so can one menu and another drawn in the same style. A real match
+   scores high on both. If the real thing keeps scoring low on shape because part of it changes
+   every time, erase that part (next step), or as a last resort tick **Colours only**.
 
    <p align="center"><img src="images/editor-image.png" width="760" alt="The profile editor: live preview of the game on the left with the Title logo region outlined in green, and on the right the captured reference, threshold, live score 1.000 and the suggested threshold with a Use button"><br>
    <sub>An image condition on the title logo: the green box is matching (live score 1.000), and the purple box suggests a threshold.
@@ -209,6 +222,7 @@ Under **2. Triggers**:
 | Field | Meaning |
 |---|---|
 | **Start the timer when…** | Condition + *appears* or *disappears* |
+| **+ or another condition** | Under any trigger: also fire on this other condition. Use it when a split can happen for more than one reason |
 | **Split when…** | The default split check, used for every segment without its own |
 | **Reset when…** | Optional; resets the run, keeping golds and the attempt |
 | **appears / disappears** | Fire when the condition becomes true, or becomes false |
@@ -227,6 +241,10 @@ Rules to know:
   pause (1000 ms by default, under *5. Fail-safes*).
 - Every trigger shows a sentence under it saying what it does, e.g. *Splits every segment when
   "time SE" appears.*
+- **Several reasons to split?** Click **+ or another condition** under the trigger and pick the
+  other one, e.g. *Level complete* or *Boss defeated*. Whichever appears first splits, and the
+  event log names it. Click **✕** to remove one. This works for start, reset and per-segment checks
+  too.
 - **Per-segment split checks** (expand the section) list every segment with what ends it. Pick a
   condition to give a segment its own check. Example: chapters 1–7 split on "CHAPTER COMPLETE", the
   last one on the credits. Leave the rest on *↳ use the default split check*.
@@ -250,7 +268,9 @@ Every split a fail-safe ignores shows up in the event read-out with the reason.
 
 1. Make a condition for each kind of load screen: a **black screen** image (capture the full or
    near-full window while it's black, threshold ~0.97), the game's **Loading** text, a door or
-   elevator transition, and so on.
+   elevator transition, and so on. Capture each one while it shows what it always shows. If a
+   spinner or a "Loading" label only shows some of the time, erase it from the PNG (§5, step 6), or
+   the shape check will see the screen as different whenever it shows.
 2. Under **3. Load removal**, click **+ Add a load screen** for each one and pick its condition.
    Click **✕** to remove one.
 3. On the timer, right-click → **Compare against → Game Time** if your category uses load-removed
@@ -389,14 +409,16 @@ measured within ±10 ms of the screen change, roughly one frame at 60 fps.
 | Symptom | Fix |
 |---|---|
 | Never matches | Region not tight enough or wrong spot; recapture the reference while the thing is on screen; use the suggested threshold |
-| Matches when it shouldn't | Use the suggested threshold, tighten the region, or mask changing pixels with transparency |
+| Matches when it shouldn't | Use the suggested threshold, tighten the region, or mask changing pixels with transparency. Make sure **Colours only** is off |
+| Never matches, *shape* is low | Something in the region changes every time: erase it from the PNG, or tick **Colours only** |
 | Splits twice | Open the **event log** to see why; raise **Must be gone before it can fire again** or set a **Shortest possible segment** |
 | Text split a bit late | Raise *OCR reads per second* under Advanced, or use an image condition instead |
-| Preview is black | Make sure capture is *Graphics Capture*; use borderless windowed instead of exclusive fullscreen |
+| Preview is black | Make sure capture is *Graphics Capture*; use borderless windowed instead of exclusive fullscreen. Still black, or the game isn't in the list (some anti-cheats block window capture)? Pick a **Whole screen** under **Capture** |
 | OCR sees no text | Make the box a bit bigger than the text; keep **Auto clean-up** on; check an OCR language is installed |
 | OCR reads garbage | Keep other text out of the box; keep **Allow OCR mistakes** on; or turn Auto clean-up off and tune by hand |
 | Worked, then stopped | Game resolution or aspect ratio changed, or the UI scale changed in the game's settings |
 | Wrong window found | Make **Process** more specific; clear **Title contains** |
+| Game not in the **Capture** list | Click **↻**. If it still isn't there, pick a **Whole screen** instead (see section 3) |
 
 ## 11. Share it
 
