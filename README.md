@@ -32,7 +32,7 @@ A speedrun timer with an autosplitter that **watches the screen**. There are no 
 - **speedrun.com:** compare against the world record and see the category's rules next to the game.
 - **Works with LiveSplit:** import your `.lss` splits, or export back to `.lss`.
 - **Hotkeys on keyboard or controller:** Xbox, PlayStation, Switch Pro and most others work while the game has focus.
-- **Stream-ready:** the oz-ui themes, plus a chroma-key mode for OBS.
+- **Stream-ready:** the oz-ui themes, plus a chroma-key mode for OBS. Set the text size, colour and a solid outline so the timer stays readable even under a strong chroma key.
 
 ## A closer look
 

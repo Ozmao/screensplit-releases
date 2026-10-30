@@ -403,6 +403,12 @@ measured within ±10 ms of the screen change, roughly one frame at 60 fps.
   floating on the key colour (cleanest edges), **Text only** leaves just outlined text. In OBS add a **Window
   Capture** of ScreenSplit, then **Filters → Chroma Key** with the same colour; *Similarity* around
   400 and *Smoothness* around 80 is a good start. Pick the key colour your game uses least.
+- **Text** (Settings → Text) makes the timer readable on stream. **Size** scales everything in the
+  timer window, and the window grows or shrinks with it. **Colour** sets names, times and labels to
+  white, yellow or any hex colour; ahead, behind and gold keep their colours. **Outline** is for chroma
+  key **Text only**. A **Solid outline** (the default) is a hard ring of 1–5 px in any colour, so
+  the text never touches the key colour and survives a strong key, even at high *Similarity*. A
+  **Soft shadow** fades into the key colour and a strong key eats it, along with the text's edges.
 
 ## 10. Troubleshooting
 
