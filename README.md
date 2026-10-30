@@ -15,6 +15,7 @@ A speedrun timer with an autosplitter that **watches the screen**. There are no 
 **[⬇ Latest release](https://github.com/Ozmao/screensplit-releases/releases/latest)**: download `ScreenSplit.exe`.
 
 - A single file with nothing to install. It needs Windows 10 (version 2004 or newer) or Windows 11, 64-bit.
+- **It updates itself** from version 0.8.0 on. When a new version is out, the timer offers it, and one click installs it and restarts. It never asks during a run. If you have an older version, download the latest one here once.
 - The exe isn't code-signed yet, so Windows SmartScreen may warn the first time. Click **More info → Run anyway**.
 - Settings are kept in `%APPDATA%\ScreenSplit`, and your games and splits in `Documents\ScreenSplit`.
 
